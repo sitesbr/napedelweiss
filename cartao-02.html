@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Lúcia Santos | NAP Edelweiss</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+        :root {
+            --color-primary-teal: #245C68;   /* Deep Teal - Autoridade e Confiança */
+            --color-secondary-sage: #C5D5C5; /* Sage - Suavidade */
+            --color-accent-gold: #F2A65A;    /* Gold - Destaque */
+            --color-surface-white: #FFFFFF;
+            --color-text-dark: #14381D;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--color-primary-teal);
+            /* Gradiente sutil para diferenciar levemente do Mestre Juan, mas mantendo a marca */
+            background-image: radial-gradient(circle at top left, rgba(242, 166, 90, 0.08) 0%, transparent 50%);
+            font-family: 'Inter', sans-serif;
+            color: var(--color-surface-white);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Cartão Central */
+        .card-container {
+            width: 100%;
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.05); /* Efeito Vidro */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Detalhe Dourado no Topo */
+        .card-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: var(--color-accent-gold);
+        }
+
+        /* --- PERFIL --- */
+        .profile-img-container {
+            position: relative;
+            width: 130px;
+            height: 130px;
+            margin: 0 auto 20px;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--color-accent-gold);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        }
+
+        /* Ícone de verificado/fundadora */
+        .verified-badge {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            background: var(--color-surface-white);
+            color: var(--color-primary-teal);
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+            margin-bottom: 4px;
+            letter-spacing: -0.5px;
+        }
+
+        .role {
+            font-family: 'Nunito', sans-serif;
+            color: var(--color-secondary-sage);
+            font-weight: 600;
+            font-size: 0.8rem; /* Ajustado para caber o título maior */
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .quote {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            font-style: italic;
+            margin-bottom: 32px;
+            line-height: 1.5;
+            color: #E2E8F0;
+            padding: 0 10px;
+        }
+
+        /* --- GRID DE AÇÕES --- */
+        .actions-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .action-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 16px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .action-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+            border-color: var(--color-secondary-sage);
+        }
+
+        .action-btn i {
+            width: 24px;
+            height: 24px;
+            color: var(--color-accent-gold);
+        }
+
+        .action-btn span {
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Botão Principal */
+        .btn-primary {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 18px;
+            background: var(--color-accent-gold);
+            color: var(--color-text-dark);
+            border-radius: 16px;
+            text-decoration: none;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            margin-top: 10px;
+            box-shadow: 0 4px 15px rgba(242, 166, 90, 0.3);
+            transition: transform 0.2s;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.02);
+            background: #f5b06e;
+        }
+
+        /* --- RODAPÉ --- */
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.75rem;
+            opacity: 0.6;
+        }
+        
+        .footer img {
+            height: 20px;
+            margin-bottom: 8px;
+            opacity: 0.8;
+            filter: brightness(0) invert(1);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="card-container">
+        
+        <div class="profile-img-container">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Ana Lúcia Santos" class="profile-img">
+            <div class="verified-badge">
+                <i data-feather="sun" width="16" height="16"></i>
+            </div>
+        </div>
+
+        <h1>Ana Lúcia Santos</h1>
+        <div class="role">Fundadora & Psicoterapeuta</div>
+        
+        <p class="quote">"Coordenação técnica com olhar humano. Construindo autonomia em parceria com a sua família."</p>
+
+        <div class="actions-grid">
+            <a href="https://wa.me/5511991626700" class="action-btn">
+                <i data-feather="message-circle"></i>
+                <span>WhatsApp</span>
+            </a>
+            
+            <a href="mailto:analucia@napedelweiss.com.br" class="action-btn">
+                <i data-feather="mail"></i>
+                <span>E-mail</span>
+            </a>
+
+            <a href="https://maps.google.com/?q=Av.+Marcondes+de+Brito,+246+-+Vila+Matilde,+São+Paulo+-+SP" target="_blank" class="action-btn">
+                <i data-feather="map-pin"></i>
+                <span>Vila Matilde</span>
+            </a>
+
+            <a href="https://napedelweiss.com.br/#metodo" class="action-btn">
+                <i data-feather="book-open"></i>
+                <span>O Método</span>
+            </a>
+        </div>
+
+        <a href="contato-ana.vcf" download class="btn-primary">
+            <i data-feather="user-plus"></i>
+            Salvar Contato
+        </a>
+
+        <div class="footer">
+            <div style="font-weight: 800; font-family: 'Nunito'; letter-spacing: 1px; margin-bottom: 5px;">NAP EDELWEISS</div>
+            <p>40 anos de história na Zona Leste</p>
+        </div>
+
+    </div>
+
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
+
