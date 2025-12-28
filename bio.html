@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAP Edelweiss | Links</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+        /* Variáveis de Cor da Marca [cite: 198, 237, 241, 245, 246] */
+        :root {
+            --color-primary-teal: #245C68;   /* Deep Teal - Técnica e Confiança */
+            --color-secondary-sage: #C5D5C5; /* Gentle Sage - Suavidade */
+            --color-accent-gold: #F2A65A;    /* Warm Gold - Ação e Calor */
+            --color-bg-snow: #F7F3EC;        /* Alpine Snow - Fundo Confortável */
+            --color-text-rock: #4B4640;      /* Soft Rock - Texto Legível */
+            --color-white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--color-bg-snow);
+            font-family: 'Inter', sans-serif;
+            color: var(--color-text-rock);
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            line-height: 1.5;
+        }
+
+        /* Container Mobile-First */
+        .bio-container {
+            width: 100%;
+            max-width: 480px; /* Largura típica de mobile */
+            padding: 40px 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* --- CABEÇALHO --- */
+        .profile-section {
+            margin-bottom: 32px;
+            width: 100%;
+        }
+
+        .logo-area {
+            width: 120px;
+            height: 120px;
+            background-color: var(--color-white);
+            border-radius: 50%; /* Circular para acolhimento [cite: 224] */
+            border: 3px solid var(--color-primary-teal);
+            margin: 0 auto 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(36, 92, 104, 0.1);
+        }
+
+        .logo-area img {
+            width: 80%;
+            height: auto;
+        }
+
+        .tagline {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--color-primary-teal);
+            margin-bottom: 8px;
+        }
+
+        .description {
+            font-size: 0.9rem;
+            color: var(--color-text-rock);
+            opacity: 0.9;
+        }
+
+        /* --- BOTÕES --- */
+        .links-section {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Centralizado */
+            width: 100%;
+            padding: 18px 20px;
+            border-radius: 16px; /* Cantos arredondados (Orgânico) [cite: 234] */
+            text-decoration: none;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn i {
+            margin-right: 10px;
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Botão Destaque (Conversão) [cite: 242] */
+        .btn-primary {
+            background-color: var(--color-accent-gold);
+            color: var(--color-primary-teal); /* Contraste Teoria da Cor */
+            box-shadow: 0 4px 20px rgba(242, 166, 90, 0.4);
+            border: 2px solid var(--color-accent-gold);
+            font-size: 1.1rem; /* Levemente maior */
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(242, 166, 90, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(242, 166, 90, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(242, 166, 90, 0); }
+        }
+
+        /* Botões Secundários (Técnicos/Informativos) [cite: 200] */
+        .btn-secondary {
+            background-color: var(--color-white);
+            color: var(--color-primary-teal);
+            border: 1px solid var(--color-secondary-sage);
+            box-shadow: 0 2px 8px rgba(36, 92, 104, 0.05);
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--color-primary-teal);
+            background-color: #FDFDFD;
+        }
+
+        /* --- RODAPÉ --- */
+        .footer {
+            margin-top: 48px;
+            font-size: 0.8rem;
+            color: var(--color-text-rock);
+            opacity: 0.7;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 16px;
+        }
+
+        .social-link {
+            color: var(--color-primary-teal);
+            transition: color 0.2s;
+        }
+
+        .social-link:hover {
+            color: var(--color-accent-gold);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="bio-container">
+        
+        <header class="profile-section">
+            <div class="logo-area">
+                <i data-feather="sun" stroke="#245C68" width="48" height="48"></i>
+            </div>
+            <h1 class="tagline">Autonomia possível.<br>Vida ativa e incluída.</h1>
+            <p class="description">Clínica-escola na Vila Matilde. 40 anos de história.</p>
+        </header>
+
+        <main class="links-section">
+            
+            <a href="https://wa.me/5511991626700" class="btn btn-primary">
+                <i data-feather="message-circle"></i>
+                Agendar Avaliação (WhatsApp)
+            </a>
+
+            <a href="seu-site.com/#metodo" class="btn btn-secondary">
+                <i data-feather="book-open"></i>
+                Conheça o Método NAP
+            </a>
+
+            <a href="seu-site.com/#jiujitsu" class="btn btn-secondary">
+                <i data-feather="award"></i>
+                Jiu-Jitsu Adaptado: Como funciona?
+            </a>
+
+            <a href="https://maps.google.com/?q=Av.+Marcondes+de+Brito,+246+-+Vila+Matilde,+São+Paulo+-+SP" target="_blank" class="btn btn-secondary">
+                <i data-feather="map-pin"></i>
+                Tour pela Clínica (Vila Matilde)
+            </a>
+
+            <a href="seu-site.com/#faq" class="btn btn-secondary">
+                <i data-feather="help-circle"></i>
+                Dúvidas Frequentes
+            </a>
+
+        </main>
+
+        <footer class="footer">
+            <p>Av. Marcondes de Brito, 246 - Vila Matilde, SP</p>
+            <p>© NAP Edelweiss</p>
+            
+            <div class="social-icons">
+                <a href="#" class="social-link"><i data-feather="instagram"></i></a>
+                <a href="#" class="social-link"><i data-feather="facebook"></i></a>
+                <a href="mailto:contato@napedelweiss.com.br" class="social-link"><i data-feather="mail"></i></a>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        // Inicializa os ícones
+        feather.replace();
+    </script>
+</body>
+</html>
+
