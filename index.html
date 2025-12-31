@@ -1,16 +1,12 @@
-
-
-
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Centro de Reabilitação Infantil na Vila Matilde - Zona Leste | NAP Edelweiss</title>
-  <meta name="description" content="Centro de Reabilitação e Terapia Infantil na Vila Matilde. Psicologia, Fonoaudiologia, Pedagogia e Esporte Adaptado. Atendimento próximo ao Tatuapé e Anália Franco." />
+  <title>NAP Edelweiss | Autonomia Possível, Vida Ativa e Incluída</title>
+  <meta name="description" content="Centro de Reabilitação Infantil na Vila Matilde. Há 40 anos construindo autonomia possível com afeto e técnica. Psicopedagogia, Fonoaudiologia e Esporte Adaptado." />
 
-  <!-- Tailwind (CDN - ok para protótipo; em produção, ideal build com purge) -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <script>
@@ -19,96 +15,78 @@
         extend: {
           colors: {
             nap: {
-              teal: "#245C68",
-              dark: "#14381D",
-              sage: "#C5D5C5",
-              gold: "#F2A65A",
-              surface: "#F8FAFC",
+              teal: "#245C68",       // Deep Teal (Primária)
+              sage: "#C5D5C5",       // Gentle Sage (Suporte/Fundo)
+              gold: "#F2A65A",       // Warm Gold (Destaque)
+              offwhite: "#F7F3EC",   // Off-White (Fundo Geral)
+              dark: "#14381D",       // Contraste máximo
             },
           },
           fontFamily: {
-            sans: ["Plus Jakarta Sans", "sans-serif"],
+            sans: ["Inter", "sans-serif"],      // Corpo do texto
+            display: ["Nunito", "sans-serif"],  // Títulos
           },
           boxShadow: {
-            glass: "0 8px 32px 0 rgba(31, 38, 135, 0.07)",
-            soft: "0 20px 40px -15px rgba(36, 92, 104, 0.15)",
+            'glow-teal': "0 10px 40px -10px rgba(36, 92, 104, 0.4)",
+            'glow-gold': "0 10px 30px -10px rgba(242, 166, 90, 0.5)",
+            'soft': "0 20px 40px -15px rgba(36, 92, 104, 0.1)",
+          },
+          borderRadius: {
+            'blob': "30% 70% 70% 30% / 30% 30% 70% 70%", // Forma orgânica para ícones
           },
         },
       },
     };
   </script>
 
-  <!-- Feather Icons -->
   <script src="https://unpkg.com/feather-icons" defer></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet" />
 
   <style>
-    body { font-family: "Plus Jakarta Sans", sans-serif; }
+    /* Estilos Globais */
+    body { font-family: "Inter", sans-serif; background-color: #F7F3EC; }
+    h1, h2, h3, h4, h5, h6 { font-family: "Nunito", sans-serif; }
+    
     .glass-nav {
       background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      border-bottom: 1px solid rgba(36, 92, 104, 0.05);
     }
-    .pattern-grid {
-      background-image: radial-gradient(#245C68 0.5px, transparent 0.5px);
-      background-size: 24px 24px;
-      opacity: 0.05;
-    }
-    details[open] summary ~ * { animation: sweep .25s ease-in-out; }
+    
+    /* Accordion Animation */
+    details[open] summary ~ * { animation: sweep .3s ease-in-out; }
     @keyframes sweep {
-      0% { opacity: 0; transform: translateY(-10px); }
+      0% { opacity: 0; transform: translateY(-5px); }
       100% { opacity: 1; transform: translateY(0); }
     }
-    /* Acessibilidade: remove marcador padrão */
     summary::-webkit-details-marker { display: none; }
   </style>
 </head>
 
-<body class="bg-nap-surface text-slate-600 antialiased selection:bg-nap-gold selection:text-nap-dark">
+<body class="bg-nap-offwhite text-slate-600 antialiased selection:bg-nap-sage selection:text-nap-teal">
 
-  <!-- Topbar -->
-  <div class="fixed top-0 left-0 w-full z-[60] h-[38px] bg-nap-dark text-white text-xs font-medium flex items-center tracking-wide">
-    <div class="max-w-7xl mx-auto px-6 w-full flex justify-between items-center">
-      <div class="flex items-center gap-4">
-        <span class="flex items-center gap-1.5">
-          <i data-feather="map-pin" class="w-3 h-3 text-nap-gold"></i>
-          Vila Matilde, ZL
-        </span>
-        <span class="hidden sm:flex items-center gap-1.5">
-          <i data-feather="clock" class="w-3 h-3 text-nap-gold"></i>
-          Seg-Sex 13:30h - 17:30h
-        </span>
-      </div>
-      <a href="tel:11991626700" class="flex items-center gap-1.5 hover:text-nap-gold transition">
-        <i data-feather="phone" class="w-3 h-3"></i> (11) 99162-6700
-      </a>
-    </div>
-  </div>
-
-  <!-- Header -->
-  <header class="fixed w-full top-[38px] z-50 transition-all duration-300 glass-nav shadow-sm h-20 flex items-center">
+  <header class="fixed w-full top-0 z-50 transition-all duration-300 glass-nav shadow-sm h-20 flex items-center">
     <div class="max-w-7xl mx-auto px-6 w-full flex justify-between items-center">
       <a href="#top" class="flex items-center gap-2.5 group" aria-label="Ir para o início">
-        <div class="w-10 h-10 bg-nap-teal rounded-xl flex items-center justify-center text-white shadow-lg group-hover:rotate-12 transition duration-300">
+        <div class="w-10 h-10 bg-nap-teal rounded-blob flex items-center justify-center text-white shadow-glow-teal group-hover:rotate-6 transition duration-300">
           <i data-feather="sun" class="w-6 h-6"></i>
         </div>
         <div>
-          <div class="text-xl font-bold text-nap-teal leading-tight">NAP Edelweiss</div>
-          <p class="text-[10px] font-bold text-nap-gold uppercase tracking-widest">Centro de Reabilitação</p>
+          <div class="text-xl font-extrabold text-nap-teal leading-none tracking-tight">NAP Edelweiss</div>
+          <p class="text-[10px] font-bold text-nap-gold uppercase tracking-widest mt-0.5">Centro de Reabilitação</p>
         </div>
       </a>
 
-      <nav class="hidden md:flex items-center gap-8">
-        <a href="#publico" class="text-sm font-semibold text-slate-600 hover:text-nap-teal transition">Para quem é</a>
+      <nav class="hidden md:flex items-center gap-6">
         <a href="#metodo" class="text-sm font-semibold text-slate-600 hover:text-nap-teal transition">Metodologia</a>
-        <a href="#servicos" class="text-sm font-semibold text-slate-600 hover:text-nap-teal transition">Serviços</a>
-        <a href="#jiujitsu" class="text-sm font-semibold text-slate-600 hover:text-nap-teal transition">Esporte Adaptado</a>
+        <a href="#esporte" class="text-sm font-semibold text-slate-600 hover:text-nap-teal transition">Jiu-Jitsu Adaptado</a>
+        <a href="#equipe" class="text-sm font-semibold text-slate-600 hover:text-nap-teal transition">Equipe</a>
         <a href="#localizacao" class="text-sm font-semibold text-slate-600 hover:text-nap-teal transition">Localização</a>
-        <a href="https://wa.me/5511991626700" class="bg-nap-teal hover:bg-nap-dark text-white text-sm font-bold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition transform hover:-translate-y-0.5">
+        <a href="#contato" class="bg-nap-teal hover:bg-nap-dark text-white text-sm font-bold px-6 py-3 rounded-full shadow-glow-teal hover:shadow-lg transition transform hover:-translate-y-0.5">
           Agendar Avaliação
         </a>
       </nav>
@@ -119,677 +97,522 @@
     </div>
 
     <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 shadow-xl p-4 flex flex-col gap-3 md:hidden">
-      <a href="#publico" class="text-slate-700 font-medium p-2 hover:bg-slate-50 rounded">Para quem é</a>
-      <a href="#metodo" class="text-slate-700 font-medium p-2 hover:bg-slate-50 rounded">O Método</a>
-      <a href="#servicos" class="text-slate-700 font-medium p-2 hover:bg-slate-50 rounded">Serviços</a>
-      <a href="#jiujitsu" class="text-slate-700 font-medium p-2 hover:bg-slate-50 rounded">Jiu-Jitsu</a>
-      <a href="#localizacao" class="text-slate-700 font-medium p-2 hover:bg-slate-50 rounded">Localização</a>
-      <a href="https://wa.me/5511991626700" class="bg-nap-gold text-nap-dark font-bold text-center py-3 rounded-lg">Falar no WhatsApp</a>
+      <a href="#metodo" class="text-slate-700 font-bold p-3 hover:bg-nap-sage/20 rounded-lg">Metodologia</a>
+      <a href="#esporte" class="text-slate-700 font-bold p-3 hover:bg-nap-sage/20 rounded-lg">Esporte Adaptado</a>
+      <a href="#equipe" class="text-slate-700 font-bold p-3 hover:bg-nap-sage/20 rounded-lg">Equipe</a>
+      <a href="#localizacao" class="text-slate-700 font-bold p-3 hover:bg-nap-sage/20 rounded-lg">Localização</a>
+      <a href="#contato" class="bg-nap-gold text-nap-dark font-extrabold text-center py-3 rounded-lg shadow-sm">Agendar Avaliação</a>
     </div>
   </header>
 
-  <!-- HERO -->
   <main id="top">
-    <section class="relative pt-48 pb-20 lg:pt-56 lg:pb-28 overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-br from-nap-surface via-white to-nap-sage/20 z-0"></div>
-      <div class="absolute right-0 top-0 w-1/3 h-full pattern-grid z-0"></div>
+   <section class="relative min-h-[85vh] flex items-center pt-20 overflow-hidden bg-nap-dark">
+      
+      <div class="absolute inset-0 z-0">
+        <img 
+          src="https://i.imgur.com/daGjVsL.jpeg?auto=format&fit=crop&w=1920&q=80" 
+          alt="Fachada do NAP Edelweiss" 
+          class="w-full h-full object-cover opacity-90"
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-nap-teal/95 via-nap-teal/70 to-nap-teal/20"></div>
+        <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-nap-teal/90 to-transparent"></div>
+      </div>
 
-      <div class="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
-        <div class="space-y-8">
-          <div class="inline-flex items-center gap-2 bg-white border border-nap-sage/50 rounded-full px-4 py-1.5 shadow-sm">
-            <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-            <span class="text-xs font-bold text-nap-teal tracking-wide uppercase">Vagas abertas para 2025</span>
-          </div>
-
-          <h1 class="text-4xl lg:text-5xl font-extrabold text-slate-900 leading-[1.15]">
-            Centro de Reabilitação Infantil na
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-nap-teal to-emerald-600">Vila Matilde, Zona Leste.</span>
+      <div class="max-w-7xl mx-auto px-6 relative z-10 w-full grid lg:grid-cols-2">
+        <div class="space-y-8 py-12">
+          
+          <h1 class="text-4xl lg:text-6xl font-black text-white leading-[1.10] tracking-tight drop-shadow-md">
+            Autonomia Possível,<br />
+            <span class="text-nap-gold">Vida Ativa e Incluída.</span>
           </h1>
 
-          <p class="text-xl font-medium text-nap-teal/80">
-            Autonomia possível. Vida ativa e incluída.
+          <p class="text-lg md:text-xl text-slate-100 leading-relaxed max-w-lg font-light drop-shadow-sm">
+            Há mais de 40 anos, apoiamos crianças e jovens com deficiência e suas famílias a construírem caminhos reais para uma vida ativa e incluída — com cuidado interdisciplinar que une <strong>técnica sólida</strong> e <strong>acolhimento humano</strong>.
           </p>
 
-          <p class="text-lg text-slate-600 leading-relaxed max-w-xl">
-            Psicologia, Fonoaudiologia, Pedagogia e Esporte Adaptado integrados há mais de <strong>40 anos</strong>.
-          </p>
-
-          <div class="flex flex-col sm:flex-row gap-4">
+          <div class="flex flex-col sm:flex-row gap-4 pt-4">
+            <a href="#contato"
+               class="flex items-center justify-center gap-2 bg-nap-teal border-2 border-nap-teal hover:bg-nap-dark hover:border-nap-dark text-white font-bold text-lg px-8 py-4 rounded-xl shadow-lg transition-all transform hover:-translate-y-1">
+               Agendar Avaliação Inicial
+            </a>
             <a href="https://wa.me/5511991626700"
-               class="flex items-center justify-center gap-2 bg-nap-gold hover:bg-orange-400 text-nap-dark font-bold text-lg px-8 py-4 rounded-xl shadow-lg transition-all transform hover:-translate-y-1">
-              Agendar Avaliação <i data-feather="arrow-right" class="w-5 h-5"></i>
-            </a>
-            <a href="#metodo"
-               class="flex items-center justify-center gap-2 bg-white border-2 border-slate-100 hover:border-nap-teal text-slate-700 font-bold text-lg px-8 py-4 rounded-xl transition hover:text-nap-teal">
-              Conhecer Método
+               class="flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm border-2 border-white text-white hover:bg-white hover:text-nap-teal font-bold text-lg px-8 py-4 rounded-xl transition-all">
+               <i data-feather="message-circle" class="w-5 h-5"></i> Falar no WhatsApp
             </a>
           </div>
 
-          <div class="flex flex-wrap gap-3 pt-2">
-            <span class="inline-flex items-center gap-2 bg-white border border-slate-100 rounded-full px-4 py-2 text-sm font-semibold text-slate-700">
-              <i data-feather="shield" class="w-4 h-4 text-nap-teal"></i> Atendimento responsável
+          <div class="pt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm font-bold text-white/90">
+            <span class="flex items-center gap-2 bg-nap-dark/30 px-3 py-1 rounded-lg backdrop-blur-sm border border-white/10">
+              <i data-feather="check" class="w-4 h-4 text-nap-gold"></i> 40 anos na Zona Leste
             </span>
-            <span class="inline-flex items-center gap-2 bg-white border border-slate-100 rounded-full px-4 py-2 text-sm font-semibold text-slate-700">
-              <i data-feather="users" class="w-4 h-4 text-nap-teal"></i> Plano individualizado
+            <span class="flex items-center gap-2 bg-nap-dark/30 px-3 py-1 rounded-lg backdrop-blur-sm border border-white/10">
+              <i data-feather="check" class="w-4 h-4 text-nap-gold"></i> Equipe Multidisciplinar
             </span>
-            <span class="inline-flex items-center gap-2 bg-white border border-slate-100 rounded-full px-4 py-2 text-sm font-semibold text-slate-700">
-              <i data-feather="map-pin" class="w-4 h-4 text-nap-teal"></i> Zona Leste (Vila Matilde)
+            <span class="flex items-center gap-2 bg-nap-dark/30 px-3 py-1 rounded-lg backdrop-blur-sm border border-white/10">
+              <i data-feather="check" class="w-4 h-4 text-nap-gold"></i> Planos Individualizados
             </span>
           </div>
         </div>
+      </div>
 
-        <div class="relative">
-          <div class="absolute -inset-4 bg-nap-sage/40 rounded-full blur-2xl opacity-70"></div>
-
-          <!-- [IMAGEM AQUI] Ideal: foto real do espaço/equipe -->
-          <img
-            src="https://images.unsplash.com/photo-1606092195730-5d7b9af1ef4d?auto=format&fit=crop&w=1200&q=80"
-            alt="[IMAGEM AQUI] Criança em atendimento / ambiente acolhedor"
-            class="relative rounded-3xl shadow-soft border-4 border-white transform rotate-2 hover:rotate-0 transition duration-500 w-full object-cover h-[500px]"
-            loading="eager"
-            decoding="async"
-            fetchpriority="high"
-          />
-        </div>
+      <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-20">
+        <svg class="relative block w-full h-[60px] md:h-[100px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="fill-nap-offwhite"></path>
+        </svg>
       </div>
     </section>
 
-    <!-- Quick Areas -->
-    <div class="border-y border-slate-200 bg-white py-8">
-      <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition duration-500">
-        <span class="flex items-center gap-2 font-bold text-xl"><i data-feather="book-open"></i> Pedagogia</span>
-        <span class="flex items-center gap-2 font-bold text-xl"><i data-feather="smile"></i> Psicologia</span>
-        <span class="flex items-center gap-2 font-bold text-xl"><i data-feather="users"></i> Fonoaudiologia</span>
-        <span class="flex items-center gap-2 font-bold text-xl"><i data-feather="award"></i> Esporte Adaptado</span>
-      </div>
-    </div>
-
-    <!-- PARA QUEM É -->
-    <section id="publico" class="py-24 bg-nap-surface relative overflow-hidden scroll-mt-36">
-      <div class="absolute left-0 bottom-0 w-1/3 h-full pattern-grid z-0"></div>
-
-      <div class="max-w-7xl mx-auto px-6 relative z-10">
-        <div class="max-w-3xl mx-auto text-center mb-14">
-          <h2 class="text-nap-gold font-bold tracking-widest uppercase text-xs mb-3">Reconhecimento imediato</h2>
-          <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-5">Para crianças e famílias que precisam de apoio real no dia a dia</h3>
-          <p class="text-lg text-slate-600">Atendemos desafios no desenvolvimento com plano individualizado e integração entre áreas.</p>
-        </div>
-
-        <div class="max-w-5xl mx-auto flex flex-wrap justify-center gap-3">
-          <span class="inline-flex items-center gap-2 bg-white border border-slate-100 rounded-full px-5 py-2 font-semibold text-slate-700 shadow-sm">
-            <i data-feather="check" class="w-4 h-4 text-nap-teal"></i> TEA (autismo)
-          </span>
-          <span class="inline-flex items-center gap-2 bg-white border border-slate-100 rounded-full px-5 py-2 font-semibold text-slate-700 shadow-sm">
-            <i data-feather="check" class="w-4 h-4 text-nap-teal"></i> Atraso de fala e comunicação
-          </span>
-          <span class="inline-flex items-center gap-2 bg-white border border-slate-100 rounded-full px-5 py-2 font-semibold text-slate-700 shadow-sm">
-            <i data-feather="check" class="w-4 h-4 text-nap-teal"></i> Dificuldades motoras e coordenação
-          </span>
-          <span class="inline-flex items-center gap-2 bg-white border border-slate-100 rounded-full px-5 py-2 font-semibold text-slate-700 shadow-sm">
-            <i data-feather="check" class="w-4 h-4 text-nap-teal"></i> Ansiedade, impulsividade e limites
-          </span>
-          <span class="inline-flex items-center gap-2 bg-white border border-slate-100 rounded-full px-5 py-2 font-semibold text-slate-700 shadow-sm">
-            <i data-feather="check" class="w-4 h-4 text-nap-teal"></i> Socialização e rotina escolar
-          </span>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROBLEMA REAL -->
-    <section class="py-24 bg-white relative overflow-hidden">
+    <section id="esporte" class="py-24 bg-nap-offwhite relative scroll-mt-24">
       <div class="max-w-7xl mx-auto px-6">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-          <div class="space-y-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Quando a evolução aparece na clínica, mas trava na vida real</h2>
-            <p class="text-lg text-slate-600">Muitas famílias chegam até nós com a mesma sensação:</p>
+        <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+          
+          <div class="w-full lg:w-3/5 relative group">
+            <div class="absolute -inset-4 bg-nap-gold/20 rounded-[2.5rem] transform rotate-2 group-hover:rotate-1 transition duration-500"></div>
+            <img 
+              src="https://i.imgur.com/Vn6kyAc.jpeg?auto=format&fit=crop&w=1200&q=80" 
+              alt="Mestre Juan Sanches em treino de Jiu-Jitsu adaptado" 
+              class="relative rounded-[2rem] shadow-2xl w-full h-[500px] object-cover border-4 border-white grayscale hover:grayscale-0 transition duration-700"
+            />
+            <p class="text-xs text-slate-500 mt-3 italic text-center lg:text-left">
+           Metodologia coordenada por Mestre Juan Sanches — disciplina que fortalece corpo e autoestima.
+            </p>
+          </div>
 
-            <ul class="space-y-3 text-slate-700">
-              <li class="flex items-start gap-3">
-                <span class="mt-1 w-8 h-8 rounded-full bg-nap-teal/10 flex items-center justify-center"><i data-feather="alert-circle" class="w-4 h-4 text-nap-teal"></i></span>
-                <span>A criança evolui, mas não generaliza no cotidiano.</span>
+          <div class="w-full lg:w-2/5 space-y-6">
+            <span class="inline-block bg-nap-teal/10 text-nap-teal font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full mb-2"> Diferencial Exclusivo NAP</span>
+            
+            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight">
+              Aqui, Seu Filho se Sente Atleta — <span class="text-nap-teal">Não Paciente.</span>
+            </h2>
+
+            <p class="text-slate-600 leading-relaxed">
+              Com uma metodologia coordenada por <strong>Mestre Juan Sanches, faixa-preta e educador físico.</strong> O esporte adaptado se torna ferramenta de autoestima, força e respeito — valores que seu filho leva para a vida toda.
+            </p>
+
+            <div class="bg-white p-6 rounded-2xl border-l-4 border-nap-gold shadow-sm">
+              <p class="text-slate-700 italic font-medium mb-3">
+                "No tatame, cada criança descobre que é capaz. E quando ela acredita nisso, muda tudo."
+              </p>
+              <footer class="text-xs font-bold text-nap-teal uppercase tracking-wide">— Mestre Juan Sanches</footer>
+            </div>
+
+            <ul class="space-y-3">
+              <li class="flex items-center gap-3 text-sm font-semibold text-slate-700">
+                <i data-feather="check-circle" class="text-nap-gold w-5 h-5"></i> Jiu-Jitsu Adaptado (Coordenação)
               </li>
-              <li class="flex items-start gap-3">
-                <span class="mt-1 w-8 h-8 rounded-full bg-nap-teal/10 flex items-center justify-center"><i data-feather="alert-circle" class="w-4 h-4 text-nap-teal"></i></span>
-                <span>O comportamento muda fora da clínica e a rotina pesa.</span>
+              <li class="flex items-center gap-3 text-sm font-semibold text-slate-700">
+                <i data-feather="check-circle" class="text-nap-gold w-5 h-5"></i> Socialização real em grupo
               </li>
-              <li class="flex items-start gap-3">
-                <span class="mt-1 w-8 h-8 rounded-full bg-nap-teal/10 flex items-center justify-center"><i data-feather="alert-circle" class="w-4 h-4 text-nap-teal"></i></span>
-                <span>A família se sente sem direção sobre como apoiar.</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="mt-1 w-8 h-8 rounded-full bg-nap-teal/10 flex items-center justify-center"><i data-feather="alert-circle" class="w-4 h-4 text-nap-teal"></i></span>
-                <span>A escola nem sempre acompanha o mesmo processo.</span>
+              <li class="flex items-center gap-3 text-sm font-semibold text-slate-700">
+                <i data-feather="check-circle" class="text-nap-gold w-5 h-5"></i> Desenvolvimento integral
               </li>
             </ul>
 
-            <p class="text-lg font-semibold text-nap-teal">
-              Nosso trabalho começa exatamente aí.
+            <div class="pt-4">
+              <a href="#contato" class="inline-flex items-center text-nap-gold font-extrabold hover:text-orange-500 transition">
+                Conheça Nossa Metodologia <i data-feather="arrow-right" class="ml-2 w-5 h-5"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-white overflow-hidden relative">
+      <div class="absolute right-0 top-0 w-1/2 h-full bg-nap-sage/10 rounded-l-[100px] z-0"></div>
+      
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div class="order-2 lg:order-1 space-y-6">
+            <span class="inline-block bg-blue-50 text-blue-600 font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full mb-2">🌊 Autonomia na Vida Real</span>
+            
+            <h2 class="text-3xl md:text-5xl font-black text-slate-900 leading-tight">
+              O Mundo É a Nossa <br/> Sala de Terapia
+            </h2>
+
+            <p class="text-lg text-slate-600 leading-relaxed">
+              A maior dor de quem nos procura? Ver o filho evoluir na clínica, mas entrar em crise quando o cenário muda. Aqui, a autonomia não é promessa — é treino real. Levamos nossos alunos para o litoral, teatro, zoológico, passeios a cavalo. Porque habilidades sociais se constroem no mundo, não apenas no consultório.
             </p>
 
-            <div class="pt-2">
-              <a href="https://wa.me/5511991626700"
-                 class="inline-flex items-center gap-2 bg-nap-teal hover:bg-nap-dark text-white font-bold px-7 py-4 rounded-xl shadow-lg transition">
-                Falar com a equipe <i data-feather="message-circle" class="w-5 h-5"></i>
+            <div class="bg-nap-offwhite p-6 rounded-2xl border border-slate-100">
+              <p class="font-bold text-nap-teal mb-2">Treino de Autonomia em Contextos Reais</p>
+              <p class="text-slate-600 text-sm">
+                Cada vivência externa é planejada e conectada ao plano terapêutico. Seu filho aprende a lidar com o novo com segurança técnica.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+              <div class="flex items-center gap-2 text-sm font-semibold text-slate-700">
+                <span class="p-2 bg-blue-100 text-blue-600 rounded-lg"><i data-feather="sun" class="w-4 h-4"></i></span> Litoral (Autonomia)
+              </div>
+              <div class="flex items-center gap-2 text-sm font-semibold text-slate-700">
+                <span class="p-2 bg-purple-100 text-purple-600 rounded-lg"><i data-feather="star" class="w-4 h-4"></i></span> Teatro (Socialização)
+              </div>
+              <div class="flex items-center gap-2 text-sm font-semibold text-slate-700">
+                <span class="p-2 bg-green-100 text-green-600 rounded-lg"><i data-feather="smile" class="w-4 h-4"></i></span> Animais (Sensorial)
+              </div>
+              <div class="flex items-center gap-2 text-sm font-semibold text-slate-700">
+                <span class="p-2 bg-yellow-100 text-yellow-600 rounded-lg"><i data-feather="map" class="w-4 h-4"></i></span> Parques (Superação)
+              </div>
+            </div>
+
+            <div class="pt-6">
+              <a href="#contato" class="inline-block bg-nap-teal text-white font-bold px-8 py-3 rounded-xl shadow-glow-teal hover:bg-nap-dark transition">
+                Quero essa autonomia para meu filho
               </a>
             </div>
           </div>
 
-          <div class="relative">
-            <div class="absolute -inset-4 bg-nap-sage/50 rounded-3xl blur-2xl opacity-60"></div>
-            <div class="relative bg-slate-50 border border-slate-100 rounded-3xl p-8 shadow-soft">
-              <h3 class="text-xl font-extrabold text-slate-900 mb-3">O que buscamos construir</h3>
-              <ul class="space-y-3 text-slate-700">
-                <li class="flex items-center gap-3"><i data-feather="check" class="w-4 h-4 text-nap-gold"></i> Autonomia funcional</li>
-                <li class="flex items-center gap-3"><i data-feather="check" class="w-4 h-4 text-nap-gold"></i> Comunicação e interação</li>
-                <li class="flex items-center gap-3"><i data-feather="check" class="w-4 h-4 text-nap-gold"></i> Rotina mais leve para a família</li>
-                <li class="flex items-center gap-3"><i data-feather="check" class="w-4 h-4 text-nap-gold"></i> Participação na escola e na comunidade</li>
-              </ul>
-
-              <div class="mt-6 bg-white rounded-2xl border border-slate-100 p-5">
-                <p class="text-sm text-slate-500 font-semibold mb-1">[TEXTO – EDITAR]</p>
-                <p class="text-slate-700 leading-relaxed">
-                  “Uma frase curta, humana e objetiva que resume a filosofia do NAP.”
-                </p>
-              </div>
-            </div>
+          <div class="order-1 lg:order-2 relative h-[500px]">
+            <img 
+              src="https://www.educacaoespecialnap.com.br/wp-content/uploads/2024/03/Nap-escola-para-criancas-e-jovens-especialis-em-Sao-Paulo-Zona-Leste-SP.jpeg?auto=format&fit=crop&w=1200&q=80" 
+              alt="Vivência externa no litoral: autonomia e alegria em contextos reais" 
+              class="w-full h-full object-cover rounded-[3rem] shadow-soft hover:scale-[1.02] transition duration-700"
+            />
           </div>
         </div>
       </div>
     </section>
 
-    <!-- MÉTODO -->
-    <section id="metodo" class="py-24 bg-nap-surface relative overflow-hidden scroll-mt-36">
+    <section class="py-20 bg-nap-offwhite">
       <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-          <h2 class="text-nap-gold font-bold tracking-widest uppercase text-xs mb-3">Diferencial Técnico</h2>
-          <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Metodologia de Reabilitação Integrada</h3>
-          <p class="text-lg text-slate-600">
-            Preparamos a criança para a vida fora da clínica — com plano individualizado, acompanhamento e alinhamento com a família.
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="text-nap-gold font-bold uppercase tracking-widest text-xs"> Memórias que Ficam</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-2">Amigos Reais, Festas Verdadeiras</h2>
+          <p class="text-lg text-slate-600 mt-4">
+            O NAP Edelweiss não é um "lugar de tratamento". É uma casa onde se fazem amigos, celebram conquistas e constroem memórias afetivas. Festa de Halloween, Páscoa, aniversários — tudo pensado para que cada criança se sinta parte e feliz.
           </p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-soft border border-slate-100 transition duration-300 hover:-translate-y-2">
-            <div class="w-14 h-14 bg-nap-teal/10 rounded-2xl flex items-center justify-center text-nap-teal mb-6">
-              <i data-feather="map"></i>
-            </div>
-            <h4 class="text-xl font-bold text-slate-900 mb-3">Vivências Externas</h4>
-            <p class="text-slate-600 leading-relaxed">
-              [TEXTO – EDITAR] Ex.: atividades em ambientes reais para ampliar autonomia, socialização e habilidades funcionais.
-            </p>
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+          <div class="rounded-3xl overflow-hidden h-64 shadow-sm group">
+            <img src="https://i.imgur.com/GDKqNPm.jpeg?auto=format&fit=crop&w=800&q=80" alt="Festa de Halloween no NAP" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
           </div>
-
-          <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-soft border border-slate-100 transition duration-300 hover:-translate-y-2">
-            <div class="w-14 h-14 bg-nap-gold/10 rounded-2xl flex items-center justify-center text-nap-gold mb-6">
-              <i data-feather="heart"></i>
-            </div>
-            <h4 class="text-xl font-bold text-slate-900 mb-3">Plano Individualizado</h4>
-            <p class="text-slate-600 leading-relaxed">
-              [TEXTO – EDITAR] Ex.: coordenação técnica e integração entre áreas para um único plano terapêutico.
-            </p>
+          <div class="rounded-3xl overflow-hidden h-64 shadow-sm group md:-mt-8 md:mb-8">
+            <img src="https://i.imgur.com/wskrTHx.jpeg?auto=format&fit=crop&w=800&q=80" alt="Celebração de datas comemorativas" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
           </div>
-
-          <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-soft border border-slate-100 transition duration-300 hover:-translate-y-2">
-            <div class="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600 mb-6">
-              <i data-feather="message-circle"></i>
-            </div>
-            <h4 class="text-xl font-bold text-slate-900 mb-3">Acolhimento Familiar</h4>
-            <p class="text-slate-600 leading-relaxed">
-              [TEXTO – EDITAR] Ex.: diálogo constante para ajustar o plano à rotina da casa e da escola.
-            </p>
+          <div class="rounded-3xl overflow-hidden h-64 shadow-sm group">
+            <img src="https://i.imgur.com/ImGovt8.jpeg?auto=format&fit=crop&w=800&q=80" alt="Amizades verdadeiras entre crianças" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
           </div>
         </div>
 
-        <div class="mt-12 text-center">
-          <a href="https://wa.me/5511991626700"
-             class="inline-flex items-center justify-center gap-2 bg-nap-gold hover:bg-orange-400 text-nap-dark font-extrabold px-8 py-4 rounded-xl shadow-lg transition">
-            Agendar Avaliação <i data-feather="arrow-right" class="w-5 h-5"></i>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVIÇOS -->
-    <section id="servicos" class="py-24 bg-white scroll-mt-36">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-          <h2 class="text-nap-gold font-bold tracking-widest uppercase text-xs mb-3">Oferta clara</h2>
-          <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Atendimentos integrados em um único plano terapêutico</h3>
-          <p class="text-lg text-slate-600">Menos fragmentação, mais consistência e acompanhamento.</p>
-        </div>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-soft transition duration-300">
-            <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center border border-slate-100 mb-5">
-              <i data-feather="smile" class="text-nap-teal"></i>
-            </div>
-            <h4 class="text-xl font-bold text-slate-900 mb-2">Psicologia Infantil</h4>
-            <p class="text-slate-600 leading-relaxed">[TEXTO – EDITAR] Emoções, comportamento, vínculos e apoio à família.</p>
-          </div>
-
-          <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-soft transition duration-300">
-            <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center border border-slate-100 mb-5">
-              <i data-feather="message-square" class="text-nap-teal"></i>
-            </div>
-            <h4 class="text-xl font-bold text-slate-900 mb-2">Fonoaudiologia</h4>
-            <p class="text-slate-600 leading-relaxed">[TEXTO – EDITAR] Linguagem, comunicação, alimentação e interação.</p>
-          </div>
-
-          <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-soft transition duration-300">
-            <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center border border-slate-100 mb-5">
-              <i data-feather="book-open" class="text-nap-teal"></i>
-            </div>
-            <h4 class="text-xl font-bold text-slate-900 mb-2">Pedagogia Terapêutica</h4>
-            <p class="text-slate-600 leading-relaxed">[TEXTO – EDITAR] Aprendizagem funcional, rotina e autonomia.</p>
-          </div>
-
-          <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-soft transition duration-300">
-            <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center border border-slate-100 mb-5">
-              <i data-feather="award" class="text-nap-teal"></i>
-            </div>
-            <h4 class="text-xl font-bold text-slate-900 mb-2">Esporte Adaptado</h4>
-            <p class="text-slate-600 leading-relaxed">[TEXTO – EDITAR] Corpo, limites, disciplina e pertencimento.</p>
-          </div>
-        </div>
-
-        <div class="mt-10 text-center">
-          <p class="text-slate-700 font-semibold">
-            Tudo conectado. Um único objetivo: <span class="text-nap-teal font-extrabold">autonomia</span>.
+        <div class="max-w-2xl mx-auto text-center bg-white p-8 rounded-3xl border border-slate-100 shadow-sm relative">
+          <div class="text-nap-gold mb-2 text-4xl leading-none">“</div>
+          <p class="text-slate-700 text-lg italic">
+            Aqui, meu filho não é 'o diferente'. Ele é o João. Ele tem amigos de verdade.
           </p>
+          <p class="text-xs font-bold text-slate-400 mt-4 uppercase">— Mãe de aluno, 8 anos</p>
         </div>
       </div>
     </section>
 
-    <!-- JIU-JITSU -->
-    <section id="jiujitsu" class="py-24 bg-nap-teal text-white relative overflow-hidden scroll-mt-36">
+    <section class="py-24 bg-white scroll-mt-24">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid md:grid-cols-12 gap-12 items-center">
+          <div class="md:col-span-4 flex flex-col items-center">
+             <div class="w-64 h-64 md:w-80 md:h-80 rounded-full p-2 border-2 border-dashed border-nap-gold relative">
+               <img 
+                 src="https://i.imgur.com/YU099aF.jpeg?auto=format&fit=crop&w=800&q=80" 
+                 alt="Dra. Ana Lúcia Santos" 
+                 class="w-full h-full object-cover rounded-full shadow-2xl"
+               />
+             </div>
+             <div class="text-center mt-6">
+               <h3 class="text-2xl font-black text-nap-teal">Ana Lúcia Santos</h3>
+               <p class="text-sm font-bold text-slate-500">Diretora Clínica | Psicoterapeuta</p>
+               <p class="text-xs text-nap-gold font-semibold mt-1">40 anos de técnica e afeto</p>
+             </div>
+          </div>
+
+          <div class="md:col-span-8 space-y-6">
+            <span class="inline-block bg-nap-teal text-white font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full">Fundadora e Alma do NAP</span>
+            
+            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900">
+              Uma vida dedicada à construção de autonomia.
+            </h2>
+
+            <div class="prose text-slate-600 leading-relaxed">
+             <p>
+    Fundadora do NAP Edelweiss, Ana Lúcia Santos construiu ao longo de quatro décadas uma metodologia própria que
+    equilibra <strong>rigor técnico e acolhimento humano</strong>. Atua diretamente com a população atendida,
+    com <strong>sessões individuais e em grupo</strong>. No dia a dia, o trabalho se integra à atuação do
+    Acompanhante Terapêutico (AT), fortalecendo comportamento e convivência — com foco em <strong>autonomia</strong>.
+  </p>
+            </div>
+
+            <div class="bg-nap-offwhite p-6 rounded-2xl border-l-4 border-nap-teal">
+              <p class="italic text-slate-700">
+                "Cada criança tem seu tempo — e meu papel é respeitar, acolher e construir caminhos possíveis dentro desse tempo."
+              </p>
+            </div>
+
+            <div class="flex flex-wrap gap-x-6 gap-y-2 text-xs font-semibold text-slate-400 mt-4">
+              <span>• CRP 06/XXXXX</span>
+              <span>• Especialização em Neuropsicologia</span>
+              <span>• 40+ anos de experiência</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="metodo" class="py-24 bg-nap-teal text-white relative overflow-hidden scroll-mt-24">
       <div class="absolute top-0 right-0 w-96 h-96 bg-white opacity-5 rounded-full blur-[100px] translate-x-1/2 -translate-y-1/2"></div>
-
-      <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative z-10">
-        <div>
-          <span class="text-nap-gold font-bold uppercase tracking-widest text-xs">Esporte como Terapia</span>
-          <h2 class="text-3xl md:text-5xl font-bold mt-4 mb-6 leading-tight">Jiu-Jitsu Adaptado como ferramenta terapêutica</h2>
-
-          <p class="text-nap-sage text-lg mb-8 leading-relaxed">
-            No NAP, o esporte não é recreação solta. Ele integra o plano terapêutico para desenvolver corpo, limites e autorregulação.
+      
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl md:text-4xl font-black mb-6">Metodologia NAP de Desenvolvimento Integral</h2>
+          <p class="text-lg text-nap-sage font-light">
+            Não trabalhamos com protocolos genéricos. Cada plano é construído a partir das potencialidades e do contexto real de cada criança.
           </p>
-
-          <ul class="space-y-4 mb-10">
-            <li class="flex items-center gap-3">
-              <div class="bg-white/10 p-2 rounded-full"><i data-feather="check" class="w-4 h-4 text-nap-gold"></i></div>
-              <span>Metodologia própria para crianças atípicas</span>
-            </li>
-            <li class="flex items-center gap-3">
-              <div class="bg-white/10 p-2 rounded-full"><i data-feather="check" class="w-4 h-4 text-nap-gold"></i></div>
-              <span>Desenvolvimento motor e emocional</span>
-            </li>
-            <li class="flex items-center gap-3">
-              <div class="bg-white/10 p-2 rounded-full"><i data-feather="check" class="w-4 h-4 text-nap-gold"></i></div>
-              <span>Disciplina, limites e autorregulação</span>
-            </li>
-            <li class="flex items-center gap-3">
-              <div class="bg-white/10 p-2 rounded-full"><i data-feather="check" class="w-4 h-4 text-nap-gold"></i></div>
-              <span>Coordenação profissional especializada</span>
-            </li>
-          </ul>
-
-          <a href="https://wa.me/5511991626700"
-             class="inline-block bg-white text-nap-teal font-bold px-8 py-4 rounded-xl hover:bg-nap-gold hover:text-nap-dark transition shadow-lg">
-            Entender como funciona
-          </a>
-        </div>
-
-        <div class="relative">
-          <div class="absolute inset-0 bg-nap-gold transform rotate-6 rounded-3xl opacity-20"></div>
-
-          <!-- [IMAGEM AQUI] Ideal: foto real do treino adaptado -->
-          <img
-            src="https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?auto=format&fit=crop&w=1200&q=80"
-            alt="[IMAGEM AQUI] Treino adaptado / ambiente seguro"
-            class="relative rounded-3xl shadow-2xl border-4 border-nap-teal/50 grayscale hover:grayscale-0 transition duration-700 w-full h-[520px] object-cover"
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
-      </div>
-    </section>
-
-    <!-- JORNADA -->
-    <section id="jornada" class="py-24 bg-white scroll-mt-36">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center max-w-3xl mx-auto mb-14">
-          <h2 class="text-nap-gold font-bold tracking-widest uppercase text-xs mb-3">Como começar</h2>
-          <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Como funciona o atendimento no NAP</h3>
-          <p class="text-lg text-slate-600">Transparência, acompanhamento e diálogo constante.</p>
-        </div>
-
-        <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
-          <div class="bg-slate-50 border border-slate-100 rounded-3xl p-7 shadow-sm">
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 rounded-2xl bg-white border border-slate-100 flex items-center justify-center">
-                <span class="font-extrabold text-nap-teal">1</span>
-              </div>
-              <div>
-                <h4 class="text-lg font-extrabold text-slate-900 mb-1">Avaliação individual inicial</h4>
-                <p class="text-slate-600">[TEXTO – EDITAR] Entender o contexto e as necessidades da criança e da família.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-slate-50 border border-slate-100 rounded-3xl p-7 shadow-sm">
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 rounded-2xl bg-white border border-slate-100 flex items-center justify-center">
-                <span class="font-extrabold text-nap-teal">2</span>
-              </div>
-              <div>
-                <h4 class="text-lg font-extrabold text-slate-900 mb-1">Definição do plano terapêutico</h4>
-                <p class="text-slate-600">[TEXTO – EDITAR] Integração entre áreas para um único plano claro.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-slate-50 border border-slate-100 rounded-3xl p-7 shadow-sm">
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 rounded-2xl bg-white border border-slate-100 flex items-center justify-center">
-                <span class="font-extrabold text-nap-teal">3</span>
-              </div>
-              <div>
-                <h4 class="text-lg font-extrabold text-slate-900 mb-1">Atendimentos integrados e acompanhamento</h4>
-                <p class="text-slate-600">[TEXTO – EDITAR] Rotina de intervenções com comunicação com a família.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-slate-50 border border-slate-100 rounded-3xl p-7 shadow-sm">
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 rounded-2xl bg-white border border-slate-100 flex items-center justify-center">
-                <span class="font-extrabold text-nap-teal">4</span>
-              </div>
-              <div>
-                <h4 class="text-lg font-extrabold text-slate-900 mb-1">Reavaliações e ajustes contínuos</h4>
-                <p class="text-slate-600">[TEXTO – EDITAR] Ajustes conforme evolução e necessidades do cotidiano.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="mt-12 text-center">
-          <a href="https://wa.me/5511991626700"
-             class="inline-flex items-center justify-center gap-2 bg-nap-teal hover:bg-nap-dark text-white font-extrabold px-8 py-4 rounded-xl shadow-lg transition">
-            Agendar Avaliação <i data-feather="arrow-right" class="w-5 h-5"></i>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- EQUIPE -->
-    <section id="equipe" class="py-24 bg-nap-surface scroll-mt-36">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-          <h2 class="text-nap-gold font-bold tracking-widest uppercase text-xs mb-3">Autoridade e confiança</h2>
-          <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Equipe técnica com experiência real</h3>
-          <p class="text-lg text-slate-600">Profissionais alinhados em um plano terapêutico integrado.</p>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-soft border border-slate-100 transition duration-300">
-            <div class="flex items-center gap-4 mb-5">
-              <div class="w-14 h-14 rounded-2xl bg-nap-teal/10 flex items-center justify-center">
-                <i data-feather="user" class="text-nap-teal"></i>
-              </div>
-              <div>
-                <h4 class="text-xl font-extrabold text-slate-900">Ana Lúcia Santos</h4>
-                <p class="text-sm font-bold text-nap-teal/80">Psicoterapeuta | Coordenação Clínica</p>
-              </div>
-            </div>
-            <p class="text-slate-600 leading-relaxed">[TEXTO – EDITAR] 2–3 linhas sobre atuação, foco e integração com família/escola.</p>
-            <div class="mt-5 rounded-2xl bg-slate-50 border border-slate-100 p-4 text-sm text-slate-600">
-              <strong class="text-slate-800">[IMAGEM AQUI]</strong> Foto profissional (opcional) ou substituir por mini-galeria do espaço.
-            </div>
-          </div>
-
-          <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-soft border border-slate-100 transition duration-300">
-            <div class="flex items-center gap-4 mb-5">
-              <div class="w-14 h-14 rounded-2xl bg-nap-gold/10 flex items-center justify-center">
-                <i data-feather="award" class="text-nap-gold"></i>
-              </div>
-              <div>
-                <h4 class="text-xl font-extrabold text-slate-900">Juan Sanches</h4>
-                <p class="text-sm font-bold text-nap-teal/80">Faixa Preta | Educação Física</p>
-              </div>
-            </div>
-            <p class="text-slate-600 leading-relaxed">[TEXTO – EDITAR] 2–3 linhas sobre metodologia no esporte adaptado e objetivos terapêuticos.</p>
-            <div class="mt-5 rounded-2xl bg-slate-50 border border-slate-100 p-4 text-sm text-slate-600">
-              <strong class="text-slate-800">[IMAGEM AQUI]</strong> Foto/ação no tatame (se possível, real).
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROVA SOCIAL -->
-    <section id="depoimentos" class="py-24 bg-white scroll-mt-36">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-          <h2 class="text-nap-gold font-bold tracking-widest uppercase text-xs mb-3">Prova social</h2>
-          <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Confiança construída ao longo de décadas</h3>
-          <p class="text-lg text-slate-600">Depoimentos curtos e objetivos. Você edita depois.</p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-8">
-          <figure class="bg-slate-50 p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-soft transition duration-300">
-            <blockquote class="text-slate-700 leading-relaxed">
-              “[DEPOIMENTO] Texto curto. Máx. 2–3 linhas. Foco em rotina, evolução funcional e acolhimento.”
-            </blockquote>
-            <figcaption class="mt-5 text-sm font-bold text-slate-900">
-              [NOME – EDITAR] <span class="text-slate-500 font-semibold">• [Cidade/Bairro – EDITAR]</span>
-            </figcaption>
-          </figure>
+          <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-8 rounded-3xl hover:bg-white/20 transition duration-300">
+            <div class="w-12 h-12 bg-white text-nap-teal rounded-lg flex items-center justify-center mb-6 font-bold text-xl">1</div>
+            <h3 class="text-xl font-bold text-nap-gold mb-3">Avaliação Interdisciplinar</h3>
+            <p class="text-slate-200 leading-relaxed text-sm">
+              Psicopedagogia, fonoaudiologia, terapia ocupacional, psicologia e educação física trabalham juntas desde o primeiro dia.
+            </p>
+          </div>
 
-          <figure class="bg-slate-50 p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-soft transition duration-300">
-            <blockquote class="text-slate-700 leading-relaxed">
-              “[DEPOIMENTO] Texto curto. Máx. 2–3 linhas. Foco em confiança na equipe e clareza do plano.”
-            </blockquote>
-            <figcaption class="mt-5 text-sm font-bold text-slate-900">
-              [NOME – EDITAR] <span class="text-slate-500 font-semibold">• [Cidade/Bairro – EDITAR]</span>
-            </figcaption>
-          </figure>
+          <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-8 rounded-3xl hover:bg-white/20 transition duration-300">
+            <div class="w-12 h-12 bg-white text-nap-teal rounded-lg flex items-center justify-center mb-6 font-bold text-xl">2</div>
+            <h3 class="text-xl font-bold text-nap-gold mb-3">Plano Contextualizado</h3>
+            <p class="text-slate-200 leading-relaxed text-sm">
+              Metas reais conectadas à vida: escola, casa, comunidade, esportes. Evolução que se vê na rotina, não apenas na clínica.
+            </p>
+          </div>
 
-          <figure class="bg-slate-50 p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-soft transition duration-300">
-            <blockquote class="text-slate-700 leading-relaxed">
-              “[DEPOIMENTO] Texto curto. Máx. 2–3 linhas. Foco em comunicação/socialização/autonomia.”
-            </blockquote>
-            <figcaption class="mt-5 text-sm font-bold text-slate-900">
-              [NOME – EDITAR] <span class="text-slate-500 font-semibold">• [Cidade/Bairro – EDITAR]</span>
-            </figcaption>
-          </figure>
+          <div class="bg-white/10 backdrop-blur-sm border border-white/20 p-8 rounded-3xl hover:bg-white/20 transition duration-300">
+            <div class="w-12 h-12 bg-white text-nap-teal rounded-lg flex items-center justify-center mb-6 font-bold text-xl">3</div>
+            <h3 class="text-xl font-bold text-nap-gold mb-3">Participação Ativa da Família</h3>
+            <p class="text-slate-200 leading-relaxed text-sm">
+              Vocês não são expectadores. São parte ativa do processo. Reuniões periódicas, diálogo permanente, ajustes sempre que necessário.
+            </p>
+          </div>
         </div>
 
-        <div class="mt-12 max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
-          <div class="bg-white border border-slate-100 rounded-3xl p-6 shadow-sm">
-            <p class="text-sm font-bold text-slate-500 mb-1">[IMAGEM AQUI]</p>
-            <p class="font-extrabold text-slate-900">Foto real do espaço</p>
-          </div>
-          <div class="bg-white border border-slate-100 rounded-3xl p-6 shadow-sm">
-            <p class="text-sm font-bold text-slate-500 mb-1">[IMAGEM AQUI]</p>
-            <p class="font-extrabold text-slate-900">Foto da equipe em atendimento</p>
-          </div>
-          <div class="bg-white border border-slate-100 rounded-3xl p-6 shadow-sm">
-            <p class="text-sm font-bold text-slate-500 mb-1">[IMAGEM AQUI]</p>
-            <p class="font-extrabold text-slate-900">Foto do esporte adaptado</p>
-          </div>
+        <div class="text-center mt-12">
+          <a href="#contato" class="inline-block bg-nap-gold hover:bg-white hover:text-nap-teal text-nap-dark font-extrabold px-8 py-4 rounded-xl shadow-lg transition">
+            Agende uma Avaliação Inicial
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- LOCALIZAÇÃO -->
-    <section id="localizacao" class="py-24 bg-white scroll-mt-36">
+    <section id="localizacao" class="py-24 bg-white">
       <div class="max-w-7xl mx-auto px-6">
-        <div class="bg-slate-50 rounded-[2.5rem] p-4 md:p-12 border border-slate-100 shadow-soft">
+        <div class="bg-nap-offwhite rounded-[2.5rem] p-6 md:p-12 border border-slate-100 shadow-soft">
           <div class="grid lg:grid-cols-2 gap-12">
             <div class="space-y-8 self-center">
-              <h2 class="text-3xl font-bold text-slate-900">Localização estratégica na Zona Leste</h2>
+              <h2 class="text-3xl font-extrabold text-slate-900">Fácil Acesso na Zona Leste</h2>
               <p class="text-slate-600 text-lg">
-                Estamos na <strong>Vila Matilde</strong>, próximo ao <strong>Tatuapé e Anália Franco</strong>. Acesso rápido via Radial Leste e Metrô (Linha Vermelha).
+                Estrategicamente localizado na <strong>Vila Matilde</strong>, próximo ao Tatuapé e Anália Franco. Trajetos curtos e rotina preservada.
               </p>
 
-              <ul class="space-y-3 text-slate-700">
-                <li class="flex items-center gap-3">
-                  <i data-feather="check" class="w-4 h-4 text-nap-teal"></i> Fácil acesso pela Radial Leste
-                </li>
-                <li class="flex items-center gap-3">
-                  <i data-feather="check" class="w-4 h-4 text-nap-teal"></i> Próximo ao Metrô Linha Vermelha
-                </li>
-                <li class="flex items-center gap-3">
-                  <i data-feather="check" class="w-4 h-4 text-nap-teal"></i> Região tranquila e acessível
-                </li>
-              </ul>
-
-              <div class="space-y-6 pt-2">
+              <div class="space-y-4 text-sm">
                 <div class="flex gap-4">
-                  <div class="bg-white p-3 rounded-xl shadow-sm h-fit border border-slate-100">
-                    <i data-feather="map-pin" class="text-nap-teal"></i>
-                  </div>
+                  <div class="min-w-[40px] h-10 bg-white rounded-lg flex items-center justify-center text-nap-teal shadow-sm"><i data-feather="map-pin"></i></div>
                   <div>
                     <h4 class="font-bold text-slate-900">Endereço</h4>
-                    <p class="text-slate-500">Av. Marcondes de Brito, 246<br />Vila Matilde, São Paulo</p>
+                    <p class="text-slate-600">Av. Marcondes de Brito, 246 — Vila Matilde, SP</p>
                   </div>
                 </div>
                 <div class="flex gap-4">
-                  <div class="bg-white p-3 rounded-xl shadow-sm h-fit border border-slate-100">
-                    <i data-feather="clock" class="text-nap-teal"></i>
-                  </div>
+                  <div class="min-w-[40px] h-10 bg-white rounded-lg flex items-center justify-center text-nap-teal shadow-sm"><i data-feather="car"></i></div>
                   <div>
-                    <h4 class="font-bold text-slate-900">Horário</h4>
-                    <p class="text-slate-500">Seg-Sex: 13:30h – 17:30h</p>
+                    <h4 class="font-bold text-slate-900">De Carro</h4>
+                    <p class="text-slate-600">Acesso rápido pela Radial Leste. Estacionamento disponível.</p>
+                  </div>
+                </div>
+                <div class="flex gap-4">
+                  <div class="min-w-[40px] h-10 bg-white rounded-lg flex items-center justify-center text-nap-teal shadow-sm"><i data-feather="navigation"></i></div>
+                  <div>
+                    <h4 class="font-bold text-slate-900">De Metrô</h4>
+                    <p class="text-slate-600">Linha 3-Vermelha (Belém ou Tatuapé) + ônibus ou trajeto curto.</p>
+                  </div>
+                </div>
+                <div class="flex gap-4">
+                  <div class="min-w-[40px] h-10 bg-white rounded-lg flex items-center justify-center text-nap-teal shadow-sm"><i data-feather="check-square"></i></div>
+                  <div>
+                    <h4 class="font-bold text-slate-900">Acessibilidade</h4>
+                    <p class="text-slate-600">Rampa de acesso e banheiros adaptados.</p>
                   </div>
                 </div>
               </div>
 
-              <a href="https://maps.google.com/?q=Av.+Marcondes+de+Brito,+246+-+Vila+Matilde,+São+Paulo+-+SP"
-                 target="_blank" rel="noopener"
-                 class="inline-flex items-center text-nap-teal font-bold hover:underline">
-                Ver rota no Google Maps <i data-feather="external-link" class="ml-2 w-4 h-4"></i>
-              </a>
-
-              <div class="pt-4">
-                <button id="load-map"
-                        class="inline-flex items-center gap-2 bg-nap-teal hover:bg-nap-dark text-white font-extrabold px-7 py-4 rounded-xl shadow-lg transition">
-                  Carregar mapa <i data-feather="map" class="w-5 h-5"></i>
-                </button>
-                <p class="text-xs text-slate-500 mt-2">Carregue o mapa somente quando precisar (melhora performance).</p>
+              <div class="pt-2">
+                <a href="https://maps.google.com" target="_blank" class="inline-flex items-center gap-2 border-2 border-nap-teal text-nap-teal hover:bg-nap-teal hover:text-white font-bold px-6 py-3 rounded-xl transition">
+                   Ver no Google Maps <i data-feather="external-link" class="w-4 h-4"></i>
+                </a>
               </div>
             </div>
 
-            <div class="h-80 lg:h-auto rounded-3xl overflow-hidden shadow-lg border-4 border-white bg-white">
-              <!-- Lazy map container (injetado via JS ao clicar) -->
-              <div id="map-container" class="w-full h-full flex items-center justify-center text-slate-400">
-                <div class="text-center px-8">
-                  <i data-feather="map" class="w-10 h-10 mx-auto mb-3"></i>
-                  <p class="font-bold text-slate-600">Mapa ainda não carregado</p>
-                  <p class="text-sm">Clique em “Carregar mapa” para abrir o Google Maps aqui.</p>
-                </div>
-              </div>
+            <div class="h-80 lg:h-auto rounded-3xl overflow-hidden shadow-lg border-4 border-white bg-slate-200 relative">
+               <img src="https://i.imgur.com/s5v0cXV.jpeg?auto=format&fit=crop&w=800&q=80" alt="Fachada e Mapa" class="w-full h-full object-cover opacity-80">
+               
+               <div class="absolute inset-0 flex items-center justify-center">
+                 <button id="load-map" class="bg-white/90 backdrop-blur px-6 py-3 rounded-xl shadow-lg font-bold text-nap-teal hover:scale-105 transition">
+                   Carregar Mapa Interativo
+                 </button>
+               </div>
+               <div id="map-container" class="absolute inset-0 z-20 pointer-events-none"></div>
             </div>
-
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="py-24 bg-nap-surface">
+    <section id="equipe" class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-nap-gold font-bold tracking-widest uppercase text-xs mb-3">Conheça Quem Cuida</h2>
+          <h3 class="text-3xl md:text-4xl font-extrabold text-slate-900">Equipe Interdisciplinar</h3>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-nap-offwhite p-6 rounded-3xl border border-slate-100 text-center hover:shadow-soft transition">
+            <div class="w-24 h-24 mx-auto bg-nap-sage rounded-full overflow-hidden mb-4 border-2 border-nap-gold">
+              <img src="https://i.imgur.com/YU099aF.jpeg?auto=format&fit=crop&w=200&q=80" class="w-full h-full object-cover">
+            </div>
+            <h4 class="text-lg font-bold text-nap-teal">Ana Lúcia Santos</h4>
+            <p class="text-xs font-bold text-slate-500 uppercase mb-3">Psicopedagoga | Diretora</p>
+            <p class="text-slate-600 text-sm italic">"Fundadora e Alma do NAP. 40 anos de dedicação."</p>
+          </div>
+
+          <div class="bg-nap-offwhite p-6 rounded-3xl border border-slate-100 text-center hover:shadow-soft transition">
+            <div class="w-24 h-24 mx-auto bg-nap-sage rounded-full overflow-hidden mb-4 border-2 border-nap-gold">
+              <img src="https://i.imgur.com/0hbkNvX.jpeg?auto=format&fit=crop&w=200&q=80" class="w-full h-full object-cover">
+            </div>
+            <h4 class="text-lg font-bold text-nap-teal">Juan Sanches</h4>
+            <p class="text-xs font-bold text-slate-500 uppercase mb-3">Ed. Física | Jiu-Jitsu</p>
+            <p class="text-slate-600 text-sm italic">"Faixa Preta de Jiu-Jitsu. O esporte como ferramenta de inclusão."</p>
+          </div>
+
+          <div class="bg-nap-offwhite p-6 rounded-3xl border border-slate-100 text-center hover:shadow-soft transition">
+            <div class="w-24 h-24 mx-auto bg-slate-200 rounded-full overflow-hidden mb-4 border-2 border-white">
+              <i data-feather="user" class="w-12 h-12 text-slate-400 mt-6 mx-auto"></i>
+            </div>
+            <h4 class="text-lg font-bold text-nap-teal">Equipe Multidisciplinar</h4>
+            <p class="text-xs font-bold text-slate-500 uppercase mb-3">Fono • Psico • T.O.</p>
+            <p class="text-slate-600 text-sm italic">"Olhar integral e afetuoso para o desenvolvimento."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="stats-section" class="py-16 bg-nap-teal text-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-center text-2xl font-bold mb-12 text-nap-sage">Confiança Construída ao Longo de Décadas</h2>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div>
+            <p class="text-4xl lg:text-5xl font-black text-nap-gold mb-2 flex justify-center"><span class="counter" data-target="1000">0</span>+</p>
+            <p class="text-sm opacity-80">Famílias atendidas</p>
+          </div>
+          <div>
+            <p class="text-4xl lg:text-5xl font-black text-nap-gold mb-2 flex justify-center"><span class="counter" data-target="40">0</span></p>
+            <p class="text-sm opacity-80">Anos de história</p>
+          </div>
+          <div>
+            <p class="text-4xl lg:text-5xl font-black text-nap-gold mb-2 flex justify-center"><span class="counter" data-target="100">0</span>%</p>
+            <p class="text-sm opacity-80">Planos individualizados</p>
+          </div>
+          <div>
+            <p class="text-4xl lg:text-5xl font-black text-nap-gold mb-2 flex justify-center"><span class="counter" data-target="7">0</span>+</p>
+            <p class="text-sm opacity-80">Profissionais especializados</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-white">
       <div class="max-w-3xl mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center mb-12 text-nap-dark">Perguntas Frequentes</h2>
+        <h2 class="text-3xl font-extrabold text-center mb-12 text-slate-900">Perguntas Frequentes</h2>
 
         <div class="space-y-4">
-          <details class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 cursor-pointer group">
-            <summary class="flex justify-between items-center font-bold text-slate-800 list-none">
-              Como funciona a avaliação inicial?
-              <span class="transition group-open:rotate-180"><i data-feather="chevron-down"></i></span>
+          <details class="bg-nap-offwhite p-6 rounded-2xl cursor-pointer group hover:shadow-md transition">
+            <summary class="flex justify-between items-center font-bold text-slate-800 list-none text-lg">
+              Como sei se meu filho precisa?
+              <span class="transition group-open:rotate-180 text-nap-teal"><i data-feather="chevron-down"></i></span>
             </summary>
             <p class="mt-4 text-slate-600 leading-relaxed">
-              [TEXTO – EDITAR] Explique em 2–3 linhas como é a primeira conversa/avaliação e o que a família recebe.
+              Se você percebe dificuldades no desenvolvimento (fala, movimento, aprendizado ou interação social), vale buscar uma avaliação. Você pode agendar diretamente conosco. Vamos entender juntos se faz sentido iniciar um acompanhamento.
             </p>
           </details>
 
-          <details class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 cursor-pointer group">
-            <summary class="flex justify-between items-center font-bold text-slate-800 list-none">
-              Quem coordena o plano terapêutico?
-              <span class="transition group-open:rotate-180"><i data-feather="chevron-down"></i></span>
+          <details class="bg-nap-offwhite p-6 rounded-2xl cursor-pointer group hover:shadow-md transition">
+            <summary class="flex justify-between items-center font-bold text-slate-800 list-none text-lg">
+              Quanto tempo dura o tratamento?
+              <span class="transition group-open:rotate-180 text-nap-teal"><i data-feather="chevron-down"></i></span>
             </summary>
             <p class="mt-4 text-slate-600 leading-relaxed">
-              A coordenação técnica é de <strong>Ana Lúcia Santos (Psicoterapeuta)</strong>. O plano é individualizado, integrando as dimensões cognitivas e emocionais.
+              Não trabalhamos com "alta definitiva" como meta fixa. Trabalhamos com evolução contínua e reavaliações periódicas, sempre respeitando o momento e as conquistas de cada criança.
             </p>
           </details>
 
-          <details class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 cursor-pointer group">
-            <summary class="flex justify-between items-center font-bold text-slate-800 list-none">
-              O Jiu-Jitsu substitui terapia?
-              <span class="transition group-open:rotate-180"><i data-feather="chevron-down"></i></span>
+           <details class="bg-nap-offwhite p-6 rounded-2xl cursor-pointer group hover:shadow-md transition">
+            <summary class="flex justify-between items-center font-bold text-slate-800 list-none text-lg">
+              Vocês trabalham com plano de saúde?
+              <span class="transition group-open:rotate-180 text-nap-teal"><i data-feather="chevron-down"></i></span>
             </summary>
             <p class="mt-4 text-slate-600 leading-relaxed">
-              [TEXTO – EDITAR] Explique que é parte integrada do plano, com objetivos terapêuticos, e não “substituição”.
-            </p>
-          </details>
-
-          <details class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 cursor-pointer group">
-            <summary class="flex justify-between items-center font-bold text-slate-800 list-none">
-              Quanto tempo leva para perceber evolução?
-              <span class="transition group-open:rotate-180"><i data-feather="chevron-down"></i></span>
-            </summary>
-            <p class="mt-4 text-slate-600 leading-relaxed">
-              [TEXTO – EDITAR] Resposta honesta (varia por criança), com foco em acompanhamento e reavaliações.
-            </p>
-          </details>
-
-          <details class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 cursor-pointer group">
-            <summary class="flex justify-between items-center font-bold text-slate-800 list-none">
-              Moro no Tatuapé ou Mooca, vale a pena?
-              <span class="transition group-open:rotate-180"><i data-feather="chevron-down"></i></span>
-            </summary>
-            <p class="mt-4 text-slate-600 leading-relaxed">
-              Sim. A Vila Matilde tem acesso rápido via Radial ou Metrô, facilitando a rotina sem grandes desvios.
+              Não temos convênio direto, mas fornecemos toda documentação detalhada para que você possa solicitar o reembolso junto ao seu plano de saúde.
             </p>
           </details>
         </div>
       </div>
     </section>
 
-    <!-- CTA FINAL -->
-    <section class="py-24 bg-white">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="bg-nap-dark rounded-[2.5rem] p-10 md:p-14 text-white shadow-soft relative overflow-hidden">
-          <div class="absolute -top-24 -right-24 w-72 h-72 bg-white/10 rounded-full blur-2xl"></div>
+    <section id="contato" class="py-24 bg-nap-offwhite relative">
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="bg-nap-dark rounded-[3rem] overflow-hidden shadow-2xl relative">
+          <div class="absolute inset-0 opacity-20">
+             <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover">
+          </div>
+          <div class="absolute inset-0 bg-nap-teal/60 mix-blend-multiply"></div>
 
-          <div class="relative grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Vamos conversar sobre o seu filho?</h2>
-              <p class="text-slate-200 text-lg leading-relaxed mb-8">
-                Avaliação individual, plano integrado e um atendimento humano e responsável.
+          <div class="grid lg:grid-cols-2 relative z-10">
+            <div class="p-10 md:p-14 text-white flex flex-col justify-center">
+              <h2 class="text-3xl md:text-5xl font-black mb-6">Pronto Para o Primeiro Passo?</h2>
+              <p class="text-nap-sage text-lg mb-8 leading-relaxed">
+                Agende uma avaliação inicial sem compromisso. Vamos conhecer sua família e mostrar como podemos ajudar.
               </p>
-
-              <ul class="space-y-3 text-slate-200">
-                <li class="flex items-center gap-3"><i data-feather="check" class="w-4 h-4 text-nap-gold"></i> Avaliação individual</li>
-                <li class="flex items-center gap-3"><i data-feather="check" class="w-4 h-4 text-nap-gold"></i> Plano integrado</li>
-                <li class="flex items-center gap-3"><i data-feather="check" class="w-4 h-4 text-nap-gold"></i> Acompanhamento e diálogo</li>
+              <ul class="space-y-3 text-sm text-slate-300 font-medium">
+                <li class="flex items-center gap-2"><i data-feather="check" class="text-nap-gold w-4 h-4"></i> Resposta em até 24h</li>
+                <li class="flex items-center gap-2"><i data-feather="check" class="text-nap-gold w-4 h-4"></i> Primeira conversa sem compromisso</li>
+                <li class="flex items-center gap-2"><i data-feather="check" class="text-nap-gold w-4 h-4"></i> Equipe especializada há 40+ anos</li>
               </ul>
             </div>
 
-            <div class="bg-white rounded-3xl p-8 md:p-10 text-slate-700 border border-white/10">
-              <p class="text-sm font-bold text-nap-teal uppercase tracking-widest mb-2">Atendimento</p>
-              <h3 class="text-2xl font-extrabold text-slate-900 mb-4">Agendar Avaliação</h3>
-              <p class="text-slate-600 mb-6">
-                [TEXTO – EDITAR] Uma frase curta sobre tempo de resposta, acolhimento e orientação inicial.
-              </p>
+            <div class="bg-white p-10 md:p-14">
+              <form class="space-y-4" onsubmit="event.preventDefault(); alert('Em produção, isso enviaria os dados!');">
+                <div>
+                  <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Seu Nome</label>
+                  <input type="text" class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-nap-teal focus:ring-1 focus:ring-nap-teal outline-none" required>
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-500 uppercase mb-1">WhatsApp</label>
+                  <input type="tel" placeholder="(11) 9..." class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-nap-teal focus:ring-1 focus:ring-nap-teal outline-none" required>
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Criança (Nome e Idade)</label>
+                  <input type="text" class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-nap-teal focus:ring-1 focus:ring-nap-teal outline-none" required>
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Canal</label>
+                  <select class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-nap-teal outline-none text-slate-600">
+                    <option>Google</option>
+                    <option>Instagram</option>
+                    <option>Indicação</option>
+                  </select>
+                </div>
 
-              <a href="https://wa.me/5511991626700"
-                 class="w-full inline-flex items-center justify-center gap-2 bg-nap-gold hover:bg-orange-400 text-nap-dark font-extrabold px-8 py-4 rounded-xl shadow-lg transition">
-                Agendar pelo WhatsApp <i data-feather="message-circle" class="w-5 h-5"></i>
-              </a>
-
-              <p class="text-xs text-slate-500 mt-4">
-                Ao clicar, você será redirecionado para o WhatsApp.
-              </p>
+                <button type="submit" class="w-full bg-nap-gold hover:bg-orange-400 text-nap-dark font-extrabold text-lg py-4 rounded-xl shadow-glow-gold hover:-translate-y-1 transition duration-300 mt-2">
+                  Agendar Avaliação Agora
+                </button>
+              </form>
             </div>
           </div>
         </div>
@@ -797,105 +620,100 @@
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-nap-dark text-white pt-20 pb-10 border-t-4 border-nap-gold">
-    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12 mb-16">
+  <footer class="bg-nap-dark text-white pt-16 pb-8 border-t-4 border-nap-gold">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12 mb-12">
       <div class="col-span-1 md:col-span-2">
-        <div class="flex items-center gap-2 mb-6">
-          <div class="w-8 h-8 bg-nap-teal rounded flex items-center justify-center">
-            <i data-feather="sun" class="w-5 h-5"></i>
-          </div>
-          <span class="text-2xl font-bold">NAP Edelweiss</span>
-        </div>
-        <p class="text-slate-400 max-w-sm">
-          Clínica-escola na Vila Matilde. [TEXTO – EDITAR] 1 frase curta de posicionamento.
+        <h4 class="text-2xl font-black font-display mb-4">NAP Edelweiss</h4>
+        <p class="text-slate-400 max-w-sm text-sm leading-relaxed">
+          Há 40 anos apoiando crianças e jovens com deficiência a construírem autonomia possível, vida ativa e incluída na Zona Leste de SP.
         </p>
       </div>
 
       <div>
-        <h4 class="font-bold text-lg mb-6 text-nap-gold">Navegação</h4>
-        <ul class="space-y-3 text-slate-300">
-          <li><a href="#publico" class="hover:text-white transition">Para quem é</a></li>
-          <li><a href="#metodo" class="hover:text-white transition">Método</a></li>
-          <li><a href="#servicos" class="hover:text-white transition">Serviços</a></li>
-          <li><a href="#jiujitsu" class="hover:text-white transition">Esporte Adaptado</a></li>
-          <li><a href="#localizacao" class="hover:text-white transition">Localização</a></li>
+        <h4 class="font-bold text-lg mb-6 text-nap-gold">Contato</h4>
+        <ul class="space-y-3 text-slate-300 text-sm">
+          <li>Av. Marcondes de Brito, 246<br />Vila Matilde — São Paulo, SP</li>
+          <li>(11) 99162-6700</li>
+          <li>Seg-Sex: 8h às 18h</li>
         </ul>
       </div>
 
       <div>
-        <h4 class="font-bold text-lg mb-6 text-nap-gold">Contato</h4>
-        <ul class="space-y-3 text-slate-300">
-          <li class="flex items-start gap-3">
-            <i data-feather="map-pin" class="w-5 h-5 mt-1 text-nap-teal"></i>
-            Av. Marcondes de Brito, 246<br />Vila Matilde, SP
-          </li>
-          <li class="flex items-center gap-3">
-            <i data-feather="phone" class="w-5 h-5 text-nap-teal"></i>
-            <a href="tel:11991626700" class="hover:text-white transition">(11) 99162-6700</a>
-          </li>
+        <h4 class="font-bold text-lg mb-6 text-nap-gold">Links</h4>
+        <ul class="space-y-3 text-slate-300 text-sm">
+          <li><a href="#metodo" class="hover:text-white">Metodologia</a></li>
+          <li><a href="#esporte" class="hover:text-white">Jiu-Jitsu</a></li>
+          <li><a href="#equipe" class="hover:text-white">Equipe</a></li>
+          <li><a href="#" class="hover:text-white">Política de Privacidade</a></li>
+          <li><a href="#" class="hover:text-white">Termos de Uso</a></li>
         </ul>
       </div>
     </div>
 
-    <div class="max-w-7xl mx-auto px-6 pt-8 border-t border-white/10 text-center text-slate-500 text-sm">
-      © 2025 NAP Edelweiss.
+    <div class="max-w-7xl mx-auto px-6 pt-8 border-t border-white/10 text-center text-slate-500 text-xs flex flex-col md:flex-row justify-between items-center gap-4">
+      <span>© 2026 NAP Edelweiss. Todos os direitos reservados.</span>
+      <span>Desenvolvido com ❤️</span>
     </div>
   </footer>
 
-  <!-- Floating WhatsApp -->
-  <a href="https://wa.me/5511991626700" target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-50 group" aria-label="Abrir WhatsApp">
-    <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping"></span>
-    <div class="relative bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition flex items-center gap-3">
-      <i data-feather="message-circle" class="w-6 h-6"></i>
-      <span class="font-bold pr-2 hidden group-hover:block transition-all duration-300">Agendar</span>
-    </div>
-  </a>
-
   <script>
-    // Icons
-    window.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1. Ícones
       if (window.feather) feather.replace();
 
-      // Mobile menu
+      // 2. Mobile Menu
       const btn = document.getElementById("mobile-btn");
       const menu = document.getElementById("mobile-menu");
       if (btn && menu) {
-        btn.addEventListener("click", () => {
-          menu.classList.toggle("hidden");
-        });
-
-        // Fecha menu ao clicar em link
-        menu.querySelectorAll("a[href^='#']").forEach((a) => {
-          a.addEventListener("click", () => menu.classList.add("hidden"));
-        });
+        btn.addEventListener("click", () => menu.classList.toggle("hidden"));
+        menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => menu.classList.add("hidden")));
       }
 
-      // Lazy load Google Maps
+      // 3. Lazy Load Map
       const loadMapBtn = document.getElementById("load-map");
       const mapContainer = document.getElementById("map-container");
-
-      const mapIframeHTML = `
-        <iframe
-          title="Mapa - NAP Edelweiss"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.568461715456!2d-46.5257!3d-23.5358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMyJzA4LjkiUyA0NsKwMzEnMzIuNSJX!5e0!3m2!1spt-BR!2sbr!4v1600000000000!5m2!1spt-BR!2sbr"
-          width="100%"
-          height="100%"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-      `;
-
       if (loadMapBtn && mapContainer) {
         loadMapBtn.addEventListener("click", () => {
-          mapContainer.innerHTML = mapIframeHTML;
-          loadMapBtn.disabled = true;
-          loadMapBtn.classList.add("opacity-60", "cursor-not-allowed");
-          loadMapBtn.innerHTML = 'Mapa carregado <span class="ml-2">✓</span>';
+          mapContainer.innerHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.584766863897!2d-46.5312!3d-23.5475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMyJzUxLjAiUyA0NsKwMzEnNTIuMyJX!5e0!3m2!1spt-BR!2sbr!4v1600000000000!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>';
+          mapContainer.classList.remove("pointer-events-none");
+          loadMapBtn.style.display = 'none';
         });
       }
+
+      // 4. Count-up Animation
+      const counters = document.querySelectorAll('.counter');
+      const statsSection = document.getElementById('stats-section');
+      
+      let started = false; // Garante que roda apenas uma vez
+
+      const startCounters = () => {
+        counters.forEach(counter => {
+          const target = +counter.getAttribute('data-target');
+          const duration = 2000; // ms
+          const increment = target / (duration / 16); // 60fps
+
+          let current = 0;
+          const updateCounter = () => {
+            current += increment;
+            if (current < target) {
+              counter.innerText = Math.ceil(current);
+              requestAnimationFrame(updateCounter);
+            } else {
+              counter.innerText = target;
+            }
+          };
+          updateCounter();
+        });
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting && !started) {
+          startCounters();
+          started = true;
+        }
+      });
+
+      if (statsSection) observer.observe(statsSection);
     });
   </script>
 </body>
