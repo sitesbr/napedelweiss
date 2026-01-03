@@ -1,310 +1,376 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juan Sanches | NAP Edelweiss</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-    
-    <script src="https://unpkg.com/feather-icons"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Juan Sanches | NAP Edelweiss</title>
 
-    <style>
-        :root {
-            --color-primary-teal: #245C68;   /* Deep Teal */
-            --color-secondary-sage: #C5D5C5; /* Sage */
-            --color-accent-gold: #F2A65A;    /* Gold */
-            --color-surface-white: #FFFFFF;
-            --color-text-dark: #14381D;
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <script src="https://unpkg.com/feather-icons"></script>
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+  <style>
+    :root{
+      /* BRAND TOKENS (Manual 2026) */
+      --nap-teal: #245C68;         /* Deep Teal */
+      --nap-forest: #14381D;       /* Deep Forest */
+      --nap-sage: #C5D5C5;         /* Gentle Sage */
+      --nap-gold: #F2A65A;         /* Warm Edelweiss Gold */
 
-        body {
-            background-color: var(--color-primary-teal);
-            /* Gradiente moderno e profundo (Mesmo padrão da Ana) */
-            background: radial-gradient(circle at 10% 20%, rgba(242, 166, 90, 0.15) 0%, transparent 40%),
-                        radial-gradient(circle at 90% 80%, rgba(197, 213, 197, 0.1) 0%, var(--color-primary-teal) 60%);
-            font-family: 'Inter', sans-serif;
-            color: var(--color-surface-white);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            overflow-x: hidden;
-        }
+      --nap-cream: #F7F3EC;
+      --nap-cream-2: #F3ECE0;
+      --nap-surface: #FFFFFF;
 
-        /* Animação de entrada */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+      --nap-charcoal: #1B1D10;
+      --nap-text: rgba(27,29,16,.92);
+      --nap-muted: rgba(27,29,16,.70);
 
-        /* Cartão Central */
-        .card-container {
-            width: 100%;
-            max-width: 380px;
-            background: rgba(36, 92, 104, 0.4); /* Base mais escura para contraste */
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-top: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 32px;
-            padding: 45px 25px 30px;
-            text-align: center;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
-            position: relative;
-            overflow: hidden;
-            animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-        }
+      --radius-xl: 32px;
+      --radius-lg: 22px;
+      --radius-pill: 999px;
 
-        /* Detalhe Dourado no Topo (Brilho) */
-        .card-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, transparent, var(--color-accent-gold), transparent);
-            opacity: 0.8;
-        }
+      --stroke: rgba(36,92,104,.12);
+      --stroke-soft: rgba(36,92,104,.10);
 
-        /* --- PERFIL --- */
-        .profile-img-container {
-            position: relative;
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 18px;
-        }
+      --shadow-lg: 0 26px 60px rgba(20,56,29,.14);
+      --shadow-md: 0 14px 28px rgba(20,56,29,.10);
+      --shadow-sm: 0 10px 18px rgba(20,56,29,.08);
 
-        .profile-img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid rgba(255,255,255,0.1);
-            outline: 3px solid var(--color-accent-gold);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-            transition: transform 0.3s ease;
-        }
+      --focus-ring: 0 0 0 4px rgba(242,166,90,.28);
+    }
 
-        .profile-img:hover {
-            transform: scale(1.02);
-        }
+    *{ box-sizing:border-box; }
+    html, body{ height:100%; }
 
-        .verified-badge {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            background: var(--color-accent-gold);
-            color: var(--color-text-dark);
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 3px solid var(--color-primary-teal);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--nap-text);
 
-        h1 {
-            font-family: 'Nunito', sans-serif;
-            font-weight: 800;
-            font-size: 1.6rem;
-            margin-bottom: 2px;
-            letter-spacing: -0.02em;
-            background: linear-gradient(to right, #fff, #e0e0e0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+      background:
+        radial-gradient(900px 520px at 14% 12%, rgba(36,92,104,.12), transparent 62%),
+        radial-gradient(720px 520px at 86% 86%, rgba(242,166,90,.22), transparent 62%),
+        linear-gradient(180deg, var(--nap-cream), var(--nap-cream-2));
 
-        .role {
-            font-family: 'Nunito', sans-serif;
-            color: var(--color-secondary-sage);
-            font-weight: 700;
-            font-size: 0.8rem; /* Levemente ajustado para caber o cargo longo */
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            opacity: 0.9;
-            line-height: 1.4;
-        }
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 22px;
+    }
 
-        .quote-container {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
-            padding: 15px;
-            margin-bottom: 30px;
-            border-left: 3px solid var(--color-secondary-sage);
-        }
+    @media (prefers-reduced-motion: reduce){
+      * { animation:none !important; transition:none !important; }
+    }
 
-        .quote {
-            font-size: 0.9rem;
-            line-height: 1.6;
-            color: #E2E8F0;
-            font-style: italic;
-            font-weight: 400;
-        }
+    .card{
+      width:100%;
+      max-width: 390px;
+      border-radius: var(--radius-xl);
+      background: rgba(255,255,255,.90);
+      border: 1px solid var(--stroke);
+      box-shadow: var(--shadow-lg);
+      padding: 44px 22px 26px;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      animation: floatIn .6s cubic-bezier(.2,.8,.2,1) both;
+    }
 
-        /* --- GRID DE AÇÕES --- */
-        .actions-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-bottom: 24px;
-        }
+    @keyframes floatIn{
+      from { opacity:0; transform: translateY(14px) scale(.99); }
+      to   { opacity:1; transform: translateY(0) scale(1); }
+    }
 
-        .action-btn {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 14px;
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            position: relative;
-            overflow: hidden;
-        }
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:0 0 auto 0;
+      height: 6px;
+      background: linear-gradient(90deg, transparent, rgba(242,166,90,.95), transparent);
+      opacity: .9;
+    }
 
-        .action-btn:hover {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: var(--color-secondary-sage);
-            transform: translateY(-4px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
+    .card::after{
+      content:"";
+      position:absolute;
+      inset:-90px -120px auto auto;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle at 30% 30%, rgba(36,92,104,.12), transparent 62%);
+      transform: rotate(10deg);
+      pointer-events:none;
+    }
 
-        .action-btn i {
-            width: 22px;
-            height: 22px;
-            color: var(--color-accent-gold);
-            transition: transform 0.3s;
-        }
+    .avatar-wrap{
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 16px;
+      position: relative;
+    }
 
-        .action-btn:hover i {
-            transform: scale(1.1);
-        }
+    .avatar{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid rgba(255,255,255,.95);
+      outline: 3px solid var(--nap-gold);
+      box-shadow: var(--shadow-md);
+      transition: transform .18s ease;
+    }
+    .avatar:hover{ transform: translateY(-1px) scale(1.01); }
 
-        .action-btn span {
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.3px;
-        }
+    .badge{
+      position:absolute;
+      right:0;
+      bottom:0;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: linear-gradient(135deg, var(--nap-gold), #E69542);
+      color: var(--nap-charcoal);
+      border: 3px solid rgba(255,255,255,.95);
+      box-shadow: 0 12px 18px rgba(20,56,29,.12);
+    }
 
-        /* Botão Principal (CTA) */
-        .btn-primary {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            width: 100%;
-            padding: 18px;
-            background: linear-gradient(135deg, var(--color-accent-gold) 0%, #E69542 100%);
-            color: var(--color-text-dark);
-            border-radius: 20px;
-            text-decoration: none;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 800;
-            font-size: 1rem;
-            box-shadow: 0 4px 20px rgba(242, 166, 90, 0.4);
-            transition: all 0.3s ease;
-            position: relative;
-            z-index: 10;
-        }
+    .name{
+      margin:0;
+      font-family: Nunito, Inter, sans-serif;
+      font-weight: 800;
+      font-size: 1.62rem;
+      letter-spacing: -0.02em;
+      line-height: 1.12;
+      color: var(--nap-teal);
+    }
 
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(242, 166, 90, 0.6);
-            filter: brightness(1.1);
-        }
+    .role{
+      margin: 6px 0 18px;
+      font-family: Nunito, Inter, sans-serif;
+      font-weight: 700;
+      font-size: .84rem;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+      color: rgba(36,92,104,.78);
+      line-height: 1.35;
+    }
 
-        /* --- RODAPÉ --- */
-        .footer {
-            margin-top: 35px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.08);
-            font-size: 0.7rem;
-            opacity: 0.6;
-            transition: opacity 0.3s;
-        }
+    .quote{
+      margin: 0 0 22px;
+      padding: 14px 14px;
+      border-radius: 18px;
+      background: rgba(197,213,197,.35);
+      border: 1px solid rgba(36,92,104,.10);
+      text-align:left;
+      position:relative;
+    }
 
-        .footer:hover {
-            opacity: 0.9;
-        }
-        
-        .footer-brand {
-            font-weight: 800; 
-            font-family: 'Nunito'; 
-            letter-spacing: 2px; 
-            margin-bottom: 4px;
-            color: var(--color-surface-white);
-        }
+    .quote::before{
+      content:"";
+      position:absolute;
+      left:0; top:12px; bottom:12px;
+      width: 3px;
+      border-radius: 999px;
+      background: rgba(36,92,104,.45);
+    }
 
-    </style>
+    .quote p{
+      margin:0;
+      padding-left: 10px;
+      font-size: .92rem;
+      line-height: 1.55;
+      color: rgba(27,29,16,.86);
+      font-style: italic;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 0 0 18px;
+    }
+
+    .action{
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+
+      padding: 14px 12px;
+      min-height: 74px;
+      border-radius: var(--radius-lg);
+
+      text-decoration:none;
+      color: var(--nap-text);
+
+      background: rgba(255,255,255,.82);
+      border: 1px solid var(--stroke-soft);
+      box-shadow: var(--shadow-sm);
+
+      transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease, background .16s ease;
+      position: relative;
+      overflow:hidden;
+    }
+
+    .action i{
+      width: 22px;
+      height: 22px;
+      color: var(--nap-teal);
+    }
+
+    .action span{
+      font-size: .82rem;
+      font-weight: 600;
+      color: rgba(27,29,16,.82);
+      letter-spacing: .01em;
+    }
+
+    .action:hover{
+      transform: translateY(-3px);
+      background: rgba(255,255,255,.94);
+      border-color: rgba(36,92,104,.22);
+      box-shadow: 0 16px 26px rgba(20,56,29,.10);
+    }
+
+    .action:focus-visible{
+      outline: none;
+      box-shadow: var(--focus-ring), 0 16px 26px rgba(20,56,29,.10);
+      border-color: rgba(242,166,90,.55);
+    }
+
+    .cta{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap: 12px;
+
+      width:100%;
+      padding: 18px 16px;
+      border-radius: var(--radius-pill);
+      text-decoration:none;
+
+      font-family: Nunito, Inter, sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+
+      color: var(--nap-charcoal);
+      background: linear-gradient(135deg, var(--nap-gold), #E69542);
+      box-shadow: 0 18px 34px rgba(242,166,90,.22);
+
+      transition: transform .16s ease, filter .16s ease, box-shadow .16s ease;
+    }
+
+    .cta:hover{
+      transform: translateY(-2px);
+      filter: brightness(1.03);
+      box-shadow: 0 20px 38px rgba(242,166,90,.28);
+    }
+
+    .cta:focus-visible{
+      outline: none;
+      box-shadow: var(--focus-ring), 0 20px 38px rgba(242,166,90,.28);
+    }
+
+    .footer{
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(36,92,104,.12);
+    }
+
+    .brand{
+      margin:0 0 4px;
+      font-family: Nunito, Inter, sans-serif;
+      font-weight: 800;
+      letter-spacing: .18em;
+      font-size: .74rem;
+      color: rgba(36,92,104,.92);
+    }
+
+    .foot{
+      margin:0;
+      font-size: .72rem;
+      color: var(--nap-muted);
+    }
+
+    @media (max-width: 360px){
+      .card{ padding: 40px 18px 24px; }
+      .name{ font-size: 1.52rem; }
+      .grid{ gap: 10px; }
+      .action{ min-height: 70px; }
+    }
+  </style>
 </head>
+
 <body>
-
-    <div class="card-container">
-        
-        <div class="profile-img-container">
-            <img src="https://alliancejjguarulhos.com.br/assets/images/social/instagram/feed/profile-post-3.png?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Mestre Juan Sanches" class="profile-img">
-            <div class="verified-badge">
-                <i data-feather="check" width="18" height="18"></i>
-            </div>
-        </div>
-
-        <h1>Juan Sanches</h1>
-        <div class="role">Coord. Desenvolvimento Motor & Jiu-Jitsu</div>
-        
-        <div class="quote-container">
-            <p class="quote">"Disciplina, técnica e afeto para construir uma vida ativa."</p>
-        </div>
-
-        <div class="actions-grid">
-            <a href="https://wa.me/5511991626700" class="action-btn">
-                <i data-feather="message-circle"></i>
-                <span>WhatsApp</span>
-            </a>
-            
-            <a href="mailto:contato@napedelweiss.com.br" class="action-btn">
-                <i data-feather="mail"></i>
-                <span>E-mail</span>
-            </a>
-
-            <a href="https://maps.google.com/?q=Av.+Marcondes+de+Brito,+246+-+Vila+Matilde,+São+Paulo+-+SP" target="_blank" class="action-btn">
-                <i data-feather="map-pin"></i>
-                <span>Clínica</span>
-            </a>
-
-            <a href="https://napedelweiss.com.br" class="action-btn">
-                <i data-feather="globe"></i>
-                <span>Website</span>
-            </a>
-        </div>
-
-        <a href="contato.vcf" download class="btn-primary">
-            <i data-feather="user-plus"></i>
-            Salvar na Agenda
-        </a>
-
-        <div class="footer">
-            <div class="footer-brand">NAP EDELWEISS</div>
-            <p>Av. Marcondes de Brito, 246 - Vila Matilde, SP</p>
-        </div>
-
+  <main class="card" role="main" aria-label="Cartão digital - Juan Sanches">
+    <div class="avatar-wrap">
+      <img
+        class="avatar"
+        src="https://alliancejjguarulhos.com.br/assets/images/social/instagram/feed/profile-post-3.png?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
+        alt="Foto de Juan Sanches"
+      />
+      <div class="badge" aria-label="Perfil verificado">
+        <i data-feather="check" width="18" height="18"></i>
+      </div>
     </div>
 
-    <script>
-        feather.replace();
-    </script>
+    <h1 class="name">Juan Sanches</h1>
+    <div class="role">Coord. Desenvolvimento Motor &amp; Jiu-Jitsu</div>
+
+    <section class="quote" aria-label="Mensagem">
+      <p>"Disciplina, técnica e afeto para construir uma vida ativa."</p>
+    </section>
+
+    <nav class="grid" aria-label="Ações rápidas">
+      <a class="action" href="https://wa.me/5511991626700" rel="noopener">
+        <i data-feather="message-circle"></i>
+        <span>WhatsApp</span>
+      </a>
+
+      <a class="action" href="mailto:contato@napedelweiss.com.br">
+        <i data-feather="mail"></i>
+        <span>E-mail</span>
+      </a>
+
+      <a
+        class="action"
+        href="https://maps.google.com/?q=Av.+Marcondes+de+Brito,+246+-+Vila+Matilde,+São+Paulo+-+SP"
+        target="_blank"
+        rel="noopener"
+      >
+        <i data-feather="map-pin"></i>
+        <span>Clínica</span>
+      </a>
+
+      <a class="action" href="https://napedelweiss.com.br" rel="noopener">
+        <i data-feather="globe"></i>
+        <span>Website</span>
+      </a>
+    </nav>
+
+    <a class="cta" href="contato.vcf" download>
+      <i data-feather="user-plus"></i>
+      Salvar na Agenda
+    </a>
+
+    <footer class="footer" aria-label="Rodapé">
+      <p class="brand">NAP EDELWEISS</p>
+      <p class="foot">Av. Marcondes de Brito, 246 - Vila Matilde, SP</p>
+    </footer>
+  </main>
+
+  <script>
+    feather.replace();
+  </script>
 </body>
 </html>
